@@ -10,7 +10,7 @@ const FooterWrapper = styled('footer')({
   color: 'white',
   padding: '20px',
   textAlign: 'center',
-  marginTop: '20px',
+  marginTop: '50px',
 });
 
 const SocialLinks = styled('div')({
