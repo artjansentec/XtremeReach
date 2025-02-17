@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem
 import MenuIcon from '@mui/icons-material/Menu';
 import { motion } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
-import { alpha } from '@mui/system'; // Importação corrigida
+import { alpha } from '@mui/system';
 
 const navItems = ['Início', 'Sobre', 'Serviços', 'Contato'];
 
@@ -34,7 +34,7 @@ function Navbar() {
                         </motion.div>
                     ))}
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                        <Button variant="contained" color="secondary" onClick={() => navigate("/login")}>
+                        <Button variant="contained" color="secondary" onClick={() => navigate("/AuthPage")}>
                             Entrar
                         </Button>
                     </motion.div>
@@ -62,7 +62,7 @@ function Navbar() {
                     ))}
                     {/* Botão "Entrar" dentro do Menu Mobile */}
                     <ListItem button>
-                        <Button variant="contained" color="secondary" fullWidth onClick={() => { navigate("/login"); handleDrawerToggle(); }}>
+                        <Button variant="contained" color="secondary" fullWidth onClick={() => { navigate("/AuthPage"); handleDrawerToggle(); }}>
                             Entrar
                         </Button>
                     </ListItem>
