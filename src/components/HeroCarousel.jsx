@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Button, Box } from '@mui/material';
+import { Typography, Button, Box, Container } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
 import Carousel1 from '../img/carrosel1.jpg';
 import Carousel2 from '../img/carrosel2.jpg';
@@ -24,23 +24,46 @@ const items = [
       description: "Deixe-nos levar sua marca a novos patamares",
       buttonText: "Comece Agora"
     }
-  ];
-  
-  function HeroCarousel() {
+];
+
+function HeroCarousel() {
     return (
-      <Carousel>
-          {items.map((item, i) => (
-          <Box key={i} position="relative" height="80vh" width="100vw" overflow="hidden">
-              <img src={item.src} alt={item.title} style={{ width: '100%', height: 'auto' }} />
-              <Box position="absolute" top="50%" left="35%" textAlign="center" color="white">
-              <Typography variant="h4" gutterBottom>{item.title}</Typography>
-              <Typography variant="h6" gutterBottom>{item.description}</Typography>
-              <Button variant="contained" color="secondary">{item.buttonText}</Button>
-              </Box>
-          </Box>
-          ))}
-      </Carousel>
+        <Carousel 
+            indicators={true}
+            animation="slide"
+            navButtonsAlwaysVisible={true}
+            autoPlay
+            interval={5000}
+        >
+            {items.map((item, i) => (
+                <Box key={i} position="relative" height="80vh" width="100vw" overflow="hidden">
+                    <img 
+                        src={item.src} 
+                        alt={item.title} 
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                    />
+                    <Container>
+                        <Box 
+                            position="absolute" 
+                            top="50%" 
+                            left="50%" 
+                            sx={{ transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white' }}
+                        >
+                            <Typography variant="h3" fontWeight="bold" gutterBottom>
+                                {item.title}
+                            </Typography>
+                            <Typography variant="h6" gutterBottom>
+                                {item.description}
+                            </Typography>
+                            <Button variant="contained" color="secondary" sx={{ mt: 2 }}>
+                                {item.buttonText}
+                            </Button>
+                        </Box>
+                    </Container>
+                </Box>
+            ))}
+        </Carousel>
     );
-  }
-  
-  export default HeroCarousel;
+}
+
+export default HeroCarousel;

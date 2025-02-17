@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, Button, Menu, MenuItem, Container, Box, Te
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Footer from '../components/Footer';
 import logo from '../img/logoAbout.png';
-import background from '../img/Background_Login.jpg';
+import Navbar from '../components/Navbar';
 
 const theme = createTheme({
   palette: {
@@ -27,36 +27,38 @@ function Login() {
       <Box
         sx={{
           position: 'fixed',
-          top: 0, left: 0,
-          width: '100vw', height: '100vh',
-          backgroundImage: `url(${background})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
           zIndex: '-1',
+          overflow: 'hidden',
         }}
-      />
+      >
+        <iframe 
+          src="https://www.youtube.com/embed/SSaGGG-L3DM?autoplay=1&loop=1&mute=1&controls=0&playlist=SSaGGG-L3DM&modestbranding=1&showinfo=0&rel=0" 
+          frameBorder="0" 
+          allow="autoplay; fullscreen" 
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '56.25vw', /* Isso mantém a proporção 16:9 */
+            minHeight: '100vh',
+            minWidth: '177.78vh', /* Isso impede as barras pretas */
+            objectFit: 'cover',
+            pointerEvents: 'none',
+          }}
+        ></iframe>
+      </Box>
 
-      <AppBar position="fixed" color="primary">
-        <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>XtremeReach</Typography>
-          <Button color="inherit">Início</Button>
-          <Button color="inherit" onClick={handleMenuOpen}>Serviços</Button>
-          <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
-            <MenuItem onClick={handleMenuClose}>Marketing Digital</MenuItem>
-            <MenuItem onClick={handleMenuClose}>Campanhas de Mídia Social</MenuItem>
-            <MenuItem onClick={handleMenuClose}>Promoção de Eventos</MenuItem>
-          </Menu>
-          <Button color="inherit">Sobre</Button>
-          <Button color="inherit">Contato</Button>
-          <Button variant="outlined" color="secondary" sx={{ marginRight: 2 }}>Logar</Button>
-          <Button variant="contained" color="secondary">Cadastrar</Button>
-        </Toolbar>
-      </AppBar>
+      <Navbar />
 
       {/* Container principal */}
       <Container component="main" maxWidth="xs" sx={{
         marginTop: 8, display: 'flex', flexDirection: 'column',
-        alignItems: 'center', justifyContent: 'center', minHeight: '100vh'
+        alignItems: 'center', justifyContent: 'center', minHeight: '100sm'
       }}>
         
         <Grid container justifyContent="center" alignItems="center" sx={{ minHeight: '60vh', minWidth: '100vh' }}>
@@ -67,7 +69,7 @@ function Login() {
 
             {/* Alternando entre Login e Cadastro */}
             <Typography variant="h3" fontWeight="900" sx={{
-              fontFamily: 'Inter, sans-serif', color: '#87432D', textAlign: 'center'
+              fontFamily: 'Inter, sans-serif', color: '#6a0dad', textAlign: 'center'
             }}>
               {isCadastro ? "Cadastro" : "Login"}
             </Typography>
@@ -88,17 +90,20 @@ function Login() {
                   sx={{ marginBottom: '20px' }} />
 
                 <Button variant="contained" fullWidth sx={{
-                  backgroundColor: '#F43734', color: '#FFFFFF', fontSize: 15, padding: '10px 0'
+                  backgroundColor: '##6a0dad', color: '#FFFFFF', fontSize: 15, padding: '10px 0'
                 }}>
                   Login
                 </Button>
 
-                <Link href="/esqueciSenha" sx={{
-                  color: '#BA4300', textDecoration: 'none', borderBottom: '0.1vh solid #BA4300',
-                  display: 'block', textAlign: 'center', marginTop: '15px'
-                }}>
-                  Esqueci minha senha
-                </Link>
+                <Typography variant="body1" textAlign="center" sx={{ marginTop: '15px' }}>
+                  Ainda não possui conta?{' '}
+                  <Link href="/esqueciSenha" sx={{
+                    color: '#6a0dad', textDecoration: 'none', borderBottom: '0.1vh solid #6a0dad'
+                  }}>
+                    Esqueci minha senha
+                  </Link>
+                </Typography>
+
 
                 {/* Botão para trocar para cadastro */}
                 <Button fullWidth sx={{ mt: 2, textTransform: 'none' }}
@@ -120,12 +125,12 @@ function Login() {
                   sx={{ marginBottom: '20px' }} />
 
                 <Button variant="contained" fullWidth sx={{
-                  backgroundColor: '#F43734', color: '#FFFFFF', fontSize: 15, padding: '10px 0'
+                  backgroundColor: '#6a0dad', color: '#FFFFFF', fontSize: 15, padding: '10px 0'
                 }}>
                   Cadastrar
                 </Button>
 
-                {/* 🔹 Botão para voltar para Login */}
+                {/*  Botão para voltar para Login */}
                 <Button fullWidth sx={{ mt: 2, textTransform: 'none' }}
                   onClick={() => setIsCadastro(false)}>
                   Já tenho uma conta
