@@ -1,0 +1,58 @@
+/* Navbar */
+.navbar {
+  background: #6a0dad !important;
+  padding: 10px 0;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Links para Desktop */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-button {
+  color: #fff !important;
+  font-size: 16px !important;
+}
+
+/* Botão Entrar */
+.login-button {
+  font-size: 16px !important;
+  padding: 8px 16px !important;
+}
+
+/* Ícone do Menu Mobile */
+.menu-icon {
+  color: #fff !important;
+  display: none !important;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 960px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block !important;
+  }
+}
+
+/* Drawer (Menu Mobile) */
+.drawer-list {
+  width: 200px;
+  text-align: center;
+}

@@ -31,12 +31,12 @@ function Footer() {
   return (
     <FooterWrapper>
       <Container>
-        <Typography>&copy; 2024 XtremeReach. Todos os direitos reservados.</Typography>
+        <Typography>&copy; 2025 XtremeReach. Todos os direitos reservados.</Typography>
         <SocialLinks>
           Siga-nos em 
-          <IconButton href="#" className={SocialIcon}><FacebookIcon /></IconButton>
-          <IconButton href="#" className={SocialIcon}><TwitterIcon /></IconButton>
-          <IconButton href="#" className={SocialIcon}><InstagramIcon /></IconButton>
+          <IconButton href="#" component={SocialIcon}> <FacebookIcon /></IconButton>
+          <IconButton href="#" component={SocialIcon}> <TwitterIcon /></IconButton>
+          <IconButton href="#" component={SocialIcon}> <InstagramIcon /></IconButton>
         </SocialLinks>
       </Container>
     </FooterWrapper>

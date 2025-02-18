@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import { Container, Box, TextField, Link, CssBaseline, Grid, Typography, Button } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Navbar from '../components/Navbar';
+import React, { useState } from "react";
+import {Container,Box,TextField,Link,CssBaseline,Grid,Typography,Button,} from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Navbar from "../components/Navbar";
+import "../assets/css/AuthPage.css";
 
 const theme = createTheme({
   palette: {
-    primary: { main: '#6a0dad' }, // Roxo
-    secondary: { main: '#ffcc00' } // Amarelo
+    primary: { main: "#6a0dad" }, // Roxo
+    secondary: { main: "#ffcc00" }, // Amarelo
   },
 });
 
@@ -18,51 +19,27 @@ function Login() {
       <CssBaseline />
 
       {/* Vídeo de fundo */}
-      <Box
-        sx={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          zIndex: '-1',
-          overflow: 'hidden',
-        }}
-      >
-        <iframe 
-          src="https://www.youtube.com/embed/SSaGGG-L3DM?autoplay=1&loop=1&mute=1&controls=0&playlist=SSaGGG-L3DM&modestbranding=1&showinfo=0&rel=0" 
-          frameBorder="0" 
+      <Box className="background-video">
+        <iframe
+          src="https://www.youtube.com/embed/SSaGGG-L3DM?autoplay=1&loop=1&mute=1&controls=0&playlist=SSaGGG-L3DM&modestbranding=1&showinfo=0&rel=0"
+          frameBorder="0"
           allow="autoplay; fullscreen"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '56.25vw',
-            minHeight: '100vh',
-            minWidth: '177.78vh',
-            objectFit: 'cover',
-            pointerEvents: 'none',
-          }}
+          className="video-iframe"
         />
       </Box>
 
       <Navbar />
 
       {/* Container principal */}
-      <Container component="main" maxWidth="xl" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '80vh'}}>
+      <Container component="main" maxWidth="xl" className="container">
         <Grid container justifyContent="center">
-          <Grid item xl={5} sm={6} md={6} sx={{
-            borderRadius: '30px', padding: '40px',
-            backdropFilter: 'blur(9px)', backgroundColor: 'rgba(245, 238, 238, 0.35)'
-          }}>
-
+          <Grid item xl={5} sm={6} md={6} className="form-container">
             {/* Título */}
-            <Typography variant="h3" fontWeight="bold" sx={{ color: '#6a0dad', textAlign: 'center' }}>
+            <Typography variant="h3" fontWeight="bold" className="title">
               {isCadastro ? "Cadastro" : "Login"}
             </Typography>
 
-            <Typography variant="h5" fontWeight="medium" mb={3} sx={{ textAlign: 'center' }}>
+            <Typography variant="h5" fontWeight="medium" mb={3} className="subtitle">
               {isCadastro ? "Crie sua conta agora!" : "Bem-vindo de volta!"}
             </Typography>
 
@@ -74,11 +51,11 @@ function Login() {
                 <TextField label="Senha" variant="standard" fullWidth margin="normal" type="password" required />
                 <TextField label="Confirmar Senha" variant="standard" fullWidth margin="normal" type="password" required sx={{ mb: 2 }} />
 
-                <Button variant="contained" fullWidth sx={{ backgroundColor: '#6a0dad', color: '#fff', fontSize: 15, py: 1.5 }}>
+                <Button variant="contained" fullWidth className="btn">
                   Cadastrar
                 </Button>
 
-                <Button fullWidth sx={{ mt: 2, textTransform: 'none' }} onClick={() => setIsCadastro(false)}>
+                <Button fullWidth className="switch-btn" onClick={() => setIsCadastro(false)}>
                   Já tenho uma conta
                 </Button>
               </>
@@ -87,17 +64,17 @@ function Login() {
                 <TextField label="E-mail" variant="standard" fullWidth margin="normal" required />
                 <TextField label="Senha" variant="standard" fullWidth margin="normal" type="password" required sx={{ mb: 2 }} />
 
-                <Button variant="contained" fullWidth sx={{ backgroundColor: '#6a0dad', color: '#fff', fontSize: 15, py: 1.5 }}>
+                <Button variant="contained" fullWidth className="btn">
                   Login
                 </Button>
 
-                <Typography variant="body1" textAlign="center" sx={{ mt: 2 }}>
-                  <Link href="/esqueciSenha" sx={{ color: '#6a0dad', textDecoration: 'none' }}>
+                <Typography variant="body1" textAlign="center" className="forgot-password">
+                  <Link href="/esqueciSenha" className="link">
                     Esqueci minha senha
                   </Link>
                 </Typography>
 
-                <Button fullWidth sx={{ mt: 2, textTransform: 'none' }} onClick={() => setIsCadastro(true)}>
+                <Button fullWidth className="switch-btn" onClick={() => setIsCadastro(true)}>
                   Criar conta
                 </Button>
               </>

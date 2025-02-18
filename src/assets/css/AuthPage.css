@@ -1,0 +1,73 @@
+/* Estilos de videos */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 56.25vw; /* Proporção 16:9 */
+    min-height: 100vh;
+    min-width: 177.78vh;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  
+  /* Container principal */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+  }
+  
+  /* Formulário */
+  .form-container {
+    border-radius: 30px;
+    padding: 40px;
+    backdrop-filter: blur(9px);
+    background-color: rgba(245, 238, 238, 0.35);
+  }
+  
+  /* Títulos */
+  .title {
+    color: #6a0dad;
+    text-align: center;
+  }
+  
+  .subtitle {
+    text-align: center;
+  }
+  
+  /* Botões */
+  .btn {
+    background-color: #6a0dad !important;
+    color: #fff !important;
+    font-size: 15px !important;
+    padding: 12px !important;
+    margin-top: 10px;
+  }
+  
+  .switch-btn {
+    margin-top: 15px;
+    text-transform: none !important;
+  }
+  
+  .forgot-password {
+    margin-top: 15px;
+  }
+  
+  .link {
+    color: #6a0dad;
+    text-decoration: none;
+  }
+  

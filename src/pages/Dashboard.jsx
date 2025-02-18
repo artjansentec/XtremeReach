@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container, Grid, Box, Typography } from '@mui/material';
-import Navbar from '../components/Navbar';
+import NavbarTest from '../components/NavbarTest';
 import CardInfo from '../components/CardInfo';
 import Footer from '../components/Footer';
 
 const Dashboard = () => {
   return (
     <div>
-      <Navbar />
+      <NavbarTest />
 
       {/* Conteúdo da Dashboard */}
       <Container sx={{ marginTop: 4 }}>
