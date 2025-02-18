@@ -6,11 +6,11 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 const FooterWrapper = styled('footer')({
-  backgroundColor: 'purple',
+  backgroundColor: '#6a0dad',
   color: 'white',
   padding: '20px',
   textAlign: 'center',
-  marginTop: '50px',
+  marginTop: '116px',
 });
 
 const SocialLinks = styled('div')({

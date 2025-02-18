@@ -1,9 +1,9 @@
 import React from 'react';
 import { Typography, Button, Box, Container } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
-import Carousel1 from '../img/carrosel1.jpg';
-import Carousel2 from '../img/carrosel2.jpg';
-import Carousel3 from '../img/carrosel3.jpg';
+import Carousel1 from '../assets/img/carrosel1.jpg';
+import Carousel2 from '../assets/img/carrosel2.jpg';
+import Carousel3 from '../assets/img/carrosel3.jpg';
 
 const items = [
     {

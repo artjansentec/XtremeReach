@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Container, Grid, Typography, Button, CardMedia } from '@mui/material';
-import logoAbout from '../img/logoAbout.png'
+import logoAbout from '../assets/img/logoAbout.png'
 
 function AboutSection() {
   return (

@@ -2,11 +2,11 @@ import React from 'react';
 import { Container, Grid, Box, Typography } from '@mui/material';
 import Navbar from '../components/Navbar';
 import CardInfo from '../components/CardInfo';
+import Footer from '../components/Footer';
 
 const Dashboard = () => {
   return (
     <div>
-      {/* Navbar */}
       <Navbar />
 
       {/* Conteúdo da Dashboard */}
@@ -16,7 +16,6 @@ const Dashboard = () => {
         </Typography>
 
         <Grid container spacing={4} justifyContent="center">
-          {/* Cards de informações rápidas */}
           <Grid item xs={12} sm={6} md={4}>
             <CardInfo title="Usuários Ativos" value="1,240" />
           </Grid>
@@ -33,14 +32,13 @@ const Dashboard = () => {
           <Typography variant="h5" sx={{ marginBottom: 2 }}>
             Gráfico de Desempenho
           </Typography>
-          {/* Aqui você pode inserir um gráfico ou outros elementos */}
-          {/* Exemplo: Gráfico de barras ou pie chart */}
+          {/* Aqui podemos inserir um gráfico ou outros elementos */}
           <Box sx={{ width: '100%', height: 300, backgroundColor: '#f4f4f4' }}>
-            {/* Placeholder para o gráfico */}
-            Gráfico aqui
           </Box>
         </Box>
       </Container>
+
+      <Footer />
     </div>
   );
 };
