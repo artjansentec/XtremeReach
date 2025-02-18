@@ -3,7 +3,7 @@
 📍 Introdução
 
 O XtremeReach é um projeto focado em marketing para esportes radicais. O objetivo principal é conectar entusiastas e empresas do setor, promovendo locais que oferecem experiências de esportes radicais e aumentando sua visibilidade por meio de uma plataforma digital.
-<img src="./src/img/Logo_2.png">
+<img src="./src/assets/img//Logo_2.png">
 
 🚀 Objetivo do Projeto
 
